@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import '../../controller/appcontroller.dart';
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final AppController appController = Get.find();
@@ -12,13 +14,13 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Login Screen', style: TextStyle(fontSize: 18)),
-            SizedBox(height: 20),
+            const Text('Login Screen', style: TextStyle(fontSize: 18)),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 appController.login();
               },
-              child: Text('Login'),
+              child: const Text('Login'),
             ),
           ],
         ),

@@ -1,4 +1,3 @@
-
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -10,7 +9,11 @@ class AppController extends GetxController {
   }
 
   Future<void> initializeApp() async {
-    await Future.delayed(const Duration(seconds: 5)); // Simulate splash screen delay
+    await Future.delayed(
+      const Duration(
+        seconds: 5,
+      ),
+    ); // Simulate splash screen delay
     final prefs = await SharedPreferences.getInstance();
 
     // Check stored states
@@ -29,7 +32,9 @@ class AppController extends GetxController {
   Future<void> completeOnboarding() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('onboardingCompleted', true);
-    Get.offAllNamed('/login'); // Navigate to login after onboarding(Introscreen):
+    Get.offAllNamed(
+      '/login',
+    ); // Navigate to login after onboarding(Introscreen):
   }
 
   Future<void> login() async {
